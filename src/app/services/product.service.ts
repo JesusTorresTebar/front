@@ -8,7 +8,7 @@ import { Product } from '../models/product';
 })
 export class ProductService {
 
-  private baseEndpoint = 'https://product-service-100363755.herokuapp.com/produEEEE';
+  private baseEndpoint = 'https://product-service-100363755.herokuapp.com/product';
   private headers : HttpHeaders= new HttpHeaders({'Content-Type':'application/json'});
   constructor(private http: HttpClient ) { }
 
