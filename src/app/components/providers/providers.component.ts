@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Provider } from '@angular/core';
+import { InvoiceService } from 'src/app/services/invoice.service';
 
 @Component({
   selector: 'app-providers',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProvidersComponent implements OnInit {
   titulo: string = 'Provider List';
-  constructor() { }
+  providers: Provider[];
+  constructor(private service:InvoiceService) { }
 
   ngOnInit(): void {
+    this.service.findAllProvider().subscribe(providers=>{
+      this.providers=providers;
+    })
   }
 
 }

@@ -1,9 +1,9 @@
 export class Provider {
-    providerId: number;
-    name:string;
-    location:string;
-    address:string;
-    email:string;
-    telephone1:string;
-    telephone2:string;
+    id: string;
+    name: string;
+    address: string;
+    description:string;
+    phone1: string;
+    phone2: string;
+    email: string;
 }

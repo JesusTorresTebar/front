@@ -29,36 +29,20 @@
       <table class="table table-striped table-hover">
         <thead>
           <tr>
-            <th scope="col">DNI</th>
+            <th scope="col">CIF</th>
             <th scope="col">Full Name</th>
             <th scope="col">Addres</th>
             <th scope="col">E-mail</th>
-            <th scope="col">Number</th>
-            
-            
+            <th scope="col">Phone</th>
           </tr>
         </thead>
         <tbody>
-          <tr>
-            <td>0555666W</td>
-            <td>Jesús Torres Tébar</td>
-            <td>Miguel Esteban C/Real Nº78</td>
-            <td>jesus@gmail.com</td>
-            <td>69987123</td>
-          </tr>
-          <tr>
-            <td>0555666W</td>
-            <td>Jesús Torres Tébar</td>
-            <td>Miguel Esteban C/Real Nº78</td>
-            <td>jesus@gmail.com</td>
-            <td>69987123</td>
-          </tr>
-          <tr>
-            <td>0555666W</td>
-            <td>Miguel Angenjo</td>
-            <td>Miguel Esteban C/Real Nº28</td>
-            <td>jesus@gmail.com</td>
-            <td>69987123</td>
+          <tr *ngFor='let provider of providers'>
+            <td>{{provider.id}}</td>
+            <td>{{provider.name}}</td>
+            <td>{{provider.address}}</td>
+            <td>{{provider.email}}</td>
+            <td>{{provider.phone1}}</td>
           </tr>
         </tbody>
       </table>
