@@ -14,6 +14,8 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { AddProviderComponent } from './components/add-provider/add-provider.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
+import { HomeComponent } from './components/home/home.component';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -25,7 +27,8 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
     AddUserComponent,
     AddProviderComponent,
     AddProductComponent,
-    AddInvoiceComponent
+    AddInvoiceComponent,
+    HomeComponent
   ],
   imports: [
   
@@ -34,7 +37,10 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
     LayoutModule,
     BrowserAnimationsModule,
     MatPaginatorModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(
+      [{path:'', redirectTo: '/home' ,pathMatch: 'full'}]
+    )
   ],
   providers: [],
   bootstrap: [AppComponent]

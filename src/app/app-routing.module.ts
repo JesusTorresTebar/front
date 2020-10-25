@@ -8,6 +8,7 @@ import { AddInvoiceComponent} from './components/add-invoice/add-invoice.compone
 import { AddUserComponent} from './components/add-user/add-user.component';
 import { AddProviderComponent} from './components/add-provider/add-provider.component';
 import { AddProductComponent} from './components/add-product/add-product.component';
+import { HomeComponent } from './components/home/home.component';
 
 const routes: Routes = [
   {path:'products',component:ProductsComponent},
@@ -17,7 +18,8 @@ const routes: Routes = [
   {path:'add-invoice', component:AddInvoiceComponent},
   {path:'add-user', component:AddUserComponent},
   {path:'add-provider', component:AddProviderComponent},
-  {path:'add-product', component:AddProductComponent}
+  {path:'add-product', component:AddProductComponent},
+  {path:'home',component:HomeComponent}
 ];
 
 @NgModule({
