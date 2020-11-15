@@ -38,7 +38,8 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor='let product of products'>
+        <tr *ngFor='let product of products'
+        (click)="onSelect(product)">
           <td>{{product.id}}</td>
           <td>{{product.productName}}</td>
           <td>{{product.stock}} / {{product.stockThreshold}}</td>

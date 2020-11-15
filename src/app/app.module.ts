@@ -16,6 +16,8 @@ import { AddProductComponent } from './components/add-product/add-product.compon
 import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
+import { IndividualProductComponent } from './components/individual-product/individual-product.component';
+
 
 @NgModule({
   declarations: [
@@ -28,7 +30,8 @@ import { RouterModule } from '@angular/router';
     AddProviderComponent,
     AddProductComponent,
     AddInvoiceComponent,
-    HomeComponent
+    HomeComponent,
+    IndividualProductComponent
   ],
   imports: [
   
