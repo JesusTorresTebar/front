@@ -10,61 +10,69 @@
 
                 <!-- productName -->
                 <label for="productName"></label>
-                <input type="text" name="productName" class="form-control" placeholder="Name">
+                <input type="text" name="productName" class="form-control" placeholder="Name"
+                [(ngModel)]="product.productName">
             </div>
 
             <div class="form-group">
 
                 <!-- description -->
                 <label for="description"></label>
-                <input type="text" name="description" class="form-control" placeholder="Description">
+                <input type="text" name="description" class="form-control" placeholder="Description"
+                [(ngModel)]="product.description">
             </div>
 
             <div class="form-group">
 
                 <!-- stock -->
                 <label for="stock"></label>
-                <input type="text" name="stock" class="form-control" placeholder="Stock">
+                <input type="text" name="stock" class="form-control" placeholder="Stock"
+                [(ngModel)]="product.stock">
             </div>
             <div class="form-group">
 
                 <!-- stockThreshold -->
                 <label for="stockThreshold"></label>
-                <input type="text" name="stockThreshold" class="form-control" placeholder="Stock Threshold">
+                <input type="text" name="stockThreshold" class="form-control" placeholder="Stock Threshold"
+                [(ngModel)]="product.stockThreshold">
             </div>
 
             <div class="form-group">
                 <!-- risk -->
                 <label for="risk"></label>
-                <input type="text" name="risk" class="form-control" placeholder="Risk">
+                <input type="text" name="risk" class="form-control" placeholder="Risk"
+                [(ngModel)]="product.risk">
             </div>
 
             <div class="form-group">
 
                 <!-- category -->
                 <label for="category"></label>
-                <input type="text" name="category" class="form-control" placeholder="Category">
+                <input type="text" name="category" class="form-control" placeholder="Category"
+                [(ngModel)]="product.category">
             </div>
 
             <div class="form-group">
 
                 <!-- zone -->
                 <label for="zone"></label>
-                <input type="text" name="zone" class="form-control" placeholder="Zone">
+                <input type="text" name="zone" class="form-control" placeholder="Zone"
+                [(ngModel)]="product.zone">
             </div>
 
             <div class="form-group">
 
                 <!-- price -->
                 <label for="price"></label>
-                <input type="text" name="price" class="form-control" placeholder="Price">
+                <input type="text" name="price" class="form-control" placeholder="Price"
+                [(ngModel)]="product.price">
             </div>
 
             
 
 
             <!-- Sign up button -->
-            <button class="btn btn-info primary" type="button">Save Product</button>
+            <button class="btn btn-success" (click)="saveProduct()" type="button">Save Product</button>
 
 
 

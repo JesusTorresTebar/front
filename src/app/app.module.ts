@@ -17,6 +17,7 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { IndividualProductComponent } from './components/individual-product/individual-product.component';
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -41,6 +42,7 @@ import { IndividualProductComponent } from './components/individual-product/indi
     BrowserAnimationsModule,
     MatPaginatorModule,
     HttpClientModule,
+    FormsModule,
     RouterModule.forRoot(
       [{path:'', redirectTo: '/home' ,pathMatch: 'full'}]
     )
