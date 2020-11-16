@@ -24,7 +24,7 @@ export class ProductsComponent implements OnInit {
   onSelect(product:Product): void {
     this.selectedProduct=product;
     console.log(this.selectedProduct.productName);
-    
+    this.router.navigate(['/individual-product',this.selectedProduct.id]);
     
   }
 

@@ -10,11 +10,20 @@ import { ProductService } from 'src/app/services/product.service';
 })
 export class IndividualProductComponent implements OnInit {
   product:Product;
-  constructor(private service:ProductService,private router:ActivatedRoute) {
-   
+  sub:any;
+  id:string;
+  constructor(private service:ProductService,private route:ActivatedRoute) {
+  
    }
 
   ngOnInit(): void {
+    this.sub=this.route.params.subscribe(params =>{
+      this.id=params['id'];
+
+      this.service.finddProductById(this.id).subscribe(product =>{
+        this.product=product;
+      });
+    });
     
   }
 
