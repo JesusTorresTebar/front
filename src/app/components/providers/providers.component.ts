@@ -1,6 +1,6 @@
-import { Component, OnInit, Provider } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import { InvoiceService } from 'src/app/services/invoice.service';
-
+import { Provider } from 'src/app/models/provider';
 @Component({
   selector: 'app-providers',
   templateUrl: './providers.component.html',

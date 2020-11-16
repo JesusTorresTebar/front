@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
   styleUrls: ['./products.component.css']
 })
 export class ProductsComponent implements OnInit {
-
+  selectedProduct: Product;
   titulo: string = 'Products List';
   products: Product[];
   constructor(private service:ProductService, private router:Router) { }
@@ -20,7 +20,7 @@ export class ProductsComponent implements OnInit {
     });
   }
 
-  selectedProduct: Product;
+  
   onSelect(product:Product): void {
     this.selectedProduct=product;
     console.log(this.selectedProduct.productName);
