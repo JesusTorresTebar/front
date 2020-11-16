@@ -11,6 +11,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class AddProductComponent implements OnInit {
   titulo: string = 'Add Product';
   product: Product=new Product();
+  
 
 
   constructor(private service: ProductService, private router:Router) { 
