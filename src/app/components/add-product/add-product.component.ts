@@ -36,4 +36,8 @@ export class AddProductComponent implements OnInit {
     
   }
 
+  public backToList():void{
+    this.router.navigate(['/home']);
+  }
+
 }
