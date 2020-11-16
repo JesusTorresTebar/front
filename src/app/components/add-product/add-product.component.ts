@@ -21,13 +21,13 @@ export class AddProductComponent implements OnInit {
   }
 
   public saveProduct():void{
-    /*this.service.createProduct(this.product).subscribe(product => {
-     
-      
-    })*/
+    this.service.createProduct(this.product).subscribe(product => {
     console.log(this.product);
     alert(`Product Created:${this.product.productName}`);
     this.router.navigate(['/products']);
+      
+    });
+    
   }
 
 }
