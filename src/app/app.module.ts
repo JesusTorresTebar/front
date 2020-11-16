@@ -18,6 +18,8 @@ import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { IndividualProductComponent } from './components/individual-product/individual-product.component';
 import { FormsModule } from '@angular/forms';
+import { CustomerComponent } from './components/customer/customer.component';
+
 
 
 @NgModule({
@@ -32,7 +34,10 @@ import { FormsModule } from '@angular/forms';
     AddProductComponent,
     AddInvoiceComponent,
     HomeComponent,
-    IndividualProductComponent
+    IndividualProductComponent,
+    
+    CustomerComponent
+    
   ],
   imports: [
   
@@ -43,6 +48,7 @@ import { FormsModule } from '@angular/forms';
     MatPaginatorModule,
     HttpClientModule,
     FormsModule,
+    
     RouterModule.forRoot(
       [{path:'', redirectTo: '/home' ,pathMatch: 'full'}]
     )

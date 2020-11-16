@@ -10,6 +10,7 @@ import { AddProviderComponent} from './components/add-provider/add-provider.comp
 import { AddProductComponent} from './components/add-product/add-product.component';
 import { HomeComponent } from './components/home/home.component';
 import { IndividualProductComponent } from './components/individual-product/individual-product.component';
+import { CustomerComponent } from './components/customer/customer.component';
 
 const routes: Routes = [
   {path:'products',component:ProductsComponent},
@@ -21,7 +22,8 @@ const routes: Routes = [
   {path:'add-provider', component:AddProviderComponent},
   {path:'add-product', component:AddProductComponent},
   {path:'home',component:HomeComponent},
-  {path:'individual-product',component:IndividualProductComponent}
+  {path:'individual-product',component:IndividualProductComponent},
+  {path:'customers',component:CustomerComponent}
 ];
 
 @NgModule({
