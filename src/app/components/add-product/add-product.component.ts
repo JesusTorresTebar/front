@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { Product } from 'src/app/models/product';
+import { Risk } from 'src/app/models/risk';
 import { ProductService } from 'src/app/services/product.service';
 
 @Component({
@@ -19,6 +20,7 @@ export class AddProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    (this.product).risks.push(new Risk());
   }
 
   public saveProduct():void{
