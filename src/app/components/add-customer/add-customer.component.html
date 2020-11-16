@@ -1,11 +1,10 @@
-
 <div class="card bg-light mb-3">
     <div class="card-header">{{titulo}}</div>
     <div class="card-body">
         <button class="btn btn-primary my-2" (click)="backToList()">Back</button>
         <form class="text-center border border-light p-5" action="#!">
 
-            <p class="h4 mb-4">Sign up Provider</p>
+            <p class="h4 mb-4">Sign up Customer</p>
 
 
             <div class="form-group">
@@ -13,7 +12,7 @@
                 <!-- ID -->
                 <label for="id"></label>
                 <input type="text" name="id" class="form-control" placeholder="CIF"
-                [(ngModel)]="provider.id">
+                [(ngModel)]="customer.id">
             </div>
 
 
@@ -22,7 +21,7 @@
                 <!-- name -->
                 <label for="name"></label>
                 <input type="text" name="name" class="form-control" placeholder="Name"
-                [(ngModel)]="provider.name">
+                [(ngModel)]="customer.name">
             </div>
             
             
@@ -31,30 +30,23 @@
                 <!-- address -->
                 <label for="address"></label>
                 <input type="text" name="address" class="form-control" placeholder="Address"
-                [(ngModel)]="provider.address">
+                [(ngModel)]="customer.address">
             </div>
 
             <div class="form-group">
 
-                <!-- description -->
-                <label for="description"></label>
-                <input type="text" name="description" class="form-control" placeholder="Description"
-                [(ngModel)]="provider.description">
+                <!-- genre -->
+                <label for="genre"></label>
+                <input type="text" name="genre" class="form-control" placeholder="Genre"
+                [(ngModel)]="customer.genre">
             </div>
 
             <div class="col-xs-6 form-group">
 
-                <!-- phone1 -->
-                <label for="phone1"></label>
-                <input type="text" name="phone1" class="form-control" placeholder="Phone Number 1"
-                [(ngModel)]="provider.phone1">
-            </div>
-            <div class="col-xs-6 form-group">
-
-                <!-- phone2 -->
-                <label for="phone2"></label>
-                <input type="text" name="phone2" class="form-control" placeholder="Phone Number 2"
-                [(ngModel)]="provider.phone2">
+                <!-- phone-->
+                <label for="phone"></label>
+                <input type="text" name="phone" class="form-control" placeholder="Phone Number"
+                [(ngModel)]="customer.phone">
             </div>
 
             <div class="form-group">
@@ -62,7 +54,7 @@
                 <!-- email -->
                 <label for="email"></label>
                 <input type="number" name="email" class="form-control" placeholder="E-mail"
-                [(ngModel)]="provider.email">
+                [(ngModel)]="customer.email">
             </div>
 
 
@@ -71,7 +63,7 @@
 
 
             <!-- Sign up button -->
-            <button class="btn btn-success" (click)="saveProvider()" type="button">Save Provider</button>
+            <button class="btn btn-success" (click)="saveCustomer()" type="button">Save Customer</button>
 
 
 

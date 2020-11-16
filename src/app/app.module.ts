@@ -10,7 +10,6 @@ import { LayoutModule } from './layout/layout.module';
 import { InvoicesComponent } from './components/invoices/invoices.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatPaginatorModule} from '@angular/material/paginator';
-import { AddUserComponent } from './components/add-user/add-user.component';
 import { AddProviderComponent } from './components/add-provider/add-provider.component';
 import { AddProductComponent } from './components/add-product/add-product.component';
 import { AddInvoiceComponent } from './components/add-invoice/add-invoice.component';
@@ -19,6 +18,7 @@ import { RouterModule } from '@angular/router';
 import { IndividualProductComponent } from './components/individual-product/individual-product.component';
 import { FormsModule } from '@angular/forms';
 import { CustomerComponent } from './components/customer/customer.component';
+import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 
 
 
@@ -29,7 +29,7 @@ import { CustomerComponent } from './components/customer/customer.component';
     ProductsComponent,
     UsersComponent,
     InvoicesComponent,
-    AddUserComponent,
+    AddCustomerComponent,
     AddProviderComponent,
     AddProductComponent,
     AddInvoiceComponent,
@@ -37,6 +37,8 @@ import { CustomerComponent } from './components/customer/customer.component';
     IndividualProductComponent,
     
     CustomerComponent
+    
+    
     
   ],
   imports: [
