@@ -1,10 +1,11 @@
-import { Injectable, Provider } from '@angular/core';
+import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { CustomerInvoice } from '../models/customerInvoice';
 import { ProviderInvoice } from '../models/providerInvoice';
 import { Customer } from '../models/customer';
 import { Product } from '../models/product';
+import { Provider } from '../models/provider';
 
 @Injectable({
   providedIn: 'root'
