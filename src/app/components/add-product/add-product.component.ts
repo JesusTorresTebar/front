@@ -12,6 +12,7 @@ import { ProductService } from 'src/app/services/product.service';
 export class AddProductComponent implements OnInit {
   titulo: string = 'Add Product';
   product: Product=new Product();
+
   risk: Risk=new Risk();
   
 
@@ -21,6 +22,7 @@ export class AddProductComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.product.risks=[];
     (this.product).risks.push(this.risk);
   }
 
