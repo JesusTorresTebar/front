@@ -21,6 +21,9 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { IndividualProviderComponent } from './components/individual-provider/individual-provider.component';
 import { IndividualCustomerComponent } from './components/individual-customer/individual-customer.component';
+import { AddProviderInvoiceComponent } from './components/add-provider-invoice/add-provider-invoice.component';
+import { AddCustomerInvoiceComponent } from './components/add-customer-invoice/add-customer-invoice.component';
+import { CreateInvoiceSelectionComponent } from './components/create-invoice-selection/create-invoice-selection.component';
 
 
 
@@ -42,7 +45,13 @@ import { IndividualCustomerComponent } from './components/individual-customer/in
     
     IndividualProviderComponent,
     
-    IndividualCustomerComponent
+    IndividualCustomerComponent,
+    
+    AddProviderInvoiceComponent,
+    
+    AddCustomerInvoiceComponent,
+    
+    CreateInvoiceSelectionComponent
     
     
     

@@ -14,6 +14,11 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { IndividualCustomerComponent } from './components/individual-customer/individual-customer.component';
 import { IndividualProviderComponent } from './components/individual-provider/individual-provider.component';
+import { CreateInvoiceSelectionComponent } from './components/create-invoice-selection/create-invoice-selection.component';
+import { CustomerInvoice } from './models/customerInvoice';
+import { ProviderInvoice } from './models/providerInvoice';
+import { AddCustomerInvoiceComponent } from './components/add-customer-invoice/add-customer-invoice.component';
+import { AddProviderInvoiceComponent } from './components/add-provider-invoice/add-provider-invoice.component';
 
 const routes: Routes = [
   {path:'products',component:ProductsComponent},
@@ -28,7 +33,10 @@ const routes: Routes = [
   {path:'individual-product/:id',component:IndividualProductComponent},
   {path:'individual-customer/:id',component:IndividualCustomerComponent},
   {path:'individual-provider/:id',component:IndividualProviderComponent},
-  {path:'customers',component:CustomerComponent}
+  {path:'customers',component:CustomerComponent},
+  {path:'create-invoice-selection',component:CreateInvoiceSelectionComponent},
+  {path:'customer-invoice', component:AddCustomerInvoiceComponent},
+  {path:'provider-invoice', component:AddProviderInvoiceComponent}
 ];
 
 @NgModule({
