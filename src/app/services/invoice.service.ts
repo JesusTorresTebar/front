@@ -48,6 +48,13 @@ export class InvoiceService {
     return this.http.get<Provider[]>(this.baseEndpoint + '/provider');
   }
 
+  public findCustomerById(id:string):Observable<Customer>{
+    return this.http.get<Customer>(this.baseEndpoint + '/customer/'+ id);
+  }
+  public findProviderById(id:string):Observable<Provider>{
+    return this.http.get<Provider>(this.baseEndpoint + '/provider/'+ id);
+  }
+
   public findTenBestBuyerCustomer(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.baseEndpoint + '/top-buyer');
   }
