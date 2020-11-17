@@ -37,7 +37,8 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor='let customer of customers'>
+          <tr *ngFor='let customer of customers'
+          (click)="onSelect(customer)">
             <td>{{customer.id}}</td>
             <td>{{customer.name}}</td>
             <td>{{customer.address}}</td>

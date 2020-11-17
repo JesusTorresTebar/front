@@ -19,6 +19,8 @@ import { IndividualProductComponent } from './components/individual-product/indi
 import { FormsModule } from '@angular/forms';
 import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
+import { IndividualProviderComponent } from './components/individual-provider/individual-provider.component';
+import { IndividualCustomerComponent } from './components/individual-customer/individual-customer.component';
 
 
 
@@ -36,7 +38,11 @@ import { AddCustomerComponent } from './components/add-customer/add-customer.com
     HomeComponent,
     IndividualProductComponent,
     
-    CustomerComponent
+    CustomerComponent,
+    
+    IndividualProviderComponent,
+    
+    IndividualCustomerComponent
     
     
     

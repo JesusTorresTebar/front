@@ -12,6 +12,8 @@ import { HomeComponent } from './components/home/home.component';
 import { IndividualProductComponent } from './components/individual-product/individual-product.component';
 import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
+import { IndividualCustomerComponent } from './components/individual-customer/individual-customer.component';
+import { IndividualProviderComponent } from './components/individual-provider/individual-provider.component';
 
 const routes: Routes = [
   {path:'products',component:ProductsComponent},
@@ -24,6 +26,8 @@ const routes: Routes = [
   {path:'add-product', component:AddProductComponent},
   {path:'home',component:HomeComponent},
   {path:'individual-product/:id',component:IndividualProductComponent},
+  {path:'individual-customer/:id',component:IndividualCustomerComponent},
+  {path:'individual-provider/:id',component:IndividualProviderComponent},
   {path:'customers',component:CustomerComponent}
 ];
 
