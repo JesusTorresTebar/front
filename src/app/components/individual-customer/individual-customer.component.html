@@ -1,13 +1,12 @@
 
-<p>{{customer.id}}</p>
-<p>{{customer.phone}}</p>
+
 <div class="card bg-light mb-3">
     <div class="card-header">{{titulo}}</div>
     <div class="card-body">
         <button class="btn btn-primary my-2" (click)="backToList()">Back</button>
         <form class="text-center border border-light p-5" action="#!">
 
-            <p class="h4 mb-4">{{customer.name}} Details</p>
+            <p class="h4 mb-4">Customer DNI:{{customer.id}} Details</p>
 
 
             <div class="form-group">
@@ -67,7 +66,7 @@
 
             <!-- Sign up button -->
             <button class="btn btn-success" (click)="updateCustomer()" type="button">Update Customer</button>
-            <button class="btn btn-danger" (click)="deleteCustomer()" type="button">Update Customer</button>
+            <button class="btn btn-danger" (click)="deleteCustomer()" type="button">Delete Customer</button>
 
 
 
