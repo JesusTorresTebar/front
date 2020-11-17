@@ -90,4 +90,14 @@ export class InvoiceService {
   }
 
 
+    /*DELETE*/
+
+    public deleteCustomer(idCustomer:string): Observable<void>{
+      return this.http.delete<void>(this.baseEndpoint+'/customer/'+idCustomer );
+    }
+     
+
+    public deleteProvider(idProvider:string): Observable<void>{
+      return this.http.delete<void>(this.baseEndpoint+'/provider/'+idProvider );
+    }
 }

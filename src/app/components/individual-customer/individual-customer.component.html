@@ -1,3 +1,78 @@
-<h1>{{customer.name}}</h1>
+
 <p>{{customer.id}}</p>
 <p>{{customer.phone}}</p>
+<div class="card bg-light mb-3">
+    <div class="card-header">{{titulo}}</div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" (click)="backToList()">Back</button>
+        <form class="text-center border border-light p-5" action="#!">
+
+            <p class="h4 mb-4">{{customer.name}} Details</p>
+
+
+            <div class="form-group">
+
+                <!-- ID -->
+                <label for="id"></label>
+                <input type="text" name="id" class="form-control" placeholder="{{customer.id}}"
+                [(ngModel)]="newCustomer.id" readonly>
+            </div>
+
+
+            <div class="form-group">
+
+                <!-- name -->
+                <label for="name"></label>
+                <input type="text" name="name" class="form-control" placeholder="{{customer.name}}"
+                [(ngModel)]="newCustomer.name">
+            </div>
+            
+            
+            <div class="form-group">
+
+                <!-- address -->
+                <label for="address"></label>
+                <input type="text" name="address" class="form-control" placeholder="{{customer.address}}"
+                [(ngModel)]="newCustomer.address">
+            </div>
+
+            <div class="form-group">
+
+                <!-- genre -->
+                <label for="genre"></label>
+                <input type="text" name="genre" class="form-control" placeholder="{{customer.genre}}"
+                [(ngModel)]="newCustomer.genre">
+            </div>
+
+            <div class="col-xs-6 form-group">
+
+                <!-- phone-->
+                <label for="phone"></label>
+                <input type="text" name="phone" class="form-control" placeholder="{{customer.phone}}"
+                [(ngModel)]="newCustomer.phone">
+            </div>
+
+            <div class="form-group">
+
+                <!-- email -->
+                <label for="email"></label>
+                <input type="text" name="email" class="form-control" placeholder="{{customer.mail}}"
+                [(ngModel)]="newCustomer.email">
+            </div>
+
+
+
+            
+
+
+            <!-- Sign up button -->
+            <button class="btn btn-success" (click)="updateCustomer()" type="button">Update Customer</button>
+            <button class="btn btn-danger" (click)="deleteCustomer()" type="button">Update Customer</button>
+
+
+
+
+        </form>
+    </div>
+
+</div>

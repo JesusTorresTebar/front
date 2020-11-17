@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Customer } from 'src/app/models/customer';
 import { InvoiceService } from 'src/app/services/invoice.service';
 
@@ -10,9 +10,10 @@ import { InvoiceService } from 'src/app/services/invoice.service';
 })
 export class IndividualCustomerComponent implements OnInit {
   customer:Customer;
+  newCustomer:Customer;
   sub:any;
   id:string;
-  constructor(private service:InvoiceService,private route:ActivatedRoute) { }
+  constructor(private service:InvoiceService,private route:ActivatedRoute, private router:Router) { }
  
   ngOnInit(): void {
     this.sub=this.route.params.subscribe(params =>{
@@ -20,9 +21,29 @@ export class IndividualCustomerComponent implements OnInit {
 
       this.service.findCustomerById(this.id).subscribe(customer =>{
         this.customer=customer;
+        this.newCustomer=customer;
       });
     });
     
+  }
+
+
+  public updateCustomer():void{
+    this.service.createCustomer(this.newCustomer).subscribe(newCustomer =>{
+    console.log(this.newCustomer);
+    alert(`Customer Updated.DNI:${this.newCustomer.id}`);
+    this.router.navigate(['/customers']);
+    });
+    
+  }
+
+  public deleteCustomer():void{
+   this.service.deleteCustomer(this.customer.id).subscribe();
+   this.router.navigate(['/customers']);
+  }
+
+  public backToList():void{
+    this.router.navigate(['/customers']);
   }
 
 }
