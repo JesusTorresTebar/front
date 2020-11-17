@@ -9,6 +9,7 @@ import { InvoiceService } from 'src/app/services/invoice.service';
   styleUrls: ['./individual-customer.component.css']
 })
 export class IndividualCustomerComponent implements OnInit {
+  titulo: string = 'Customer Details';
   customer:Customer;
   newCustomer:Customer;
   sub:any;
@@ -39,6 +40,7 @@ export class IndividualCustomerComponent implements OnInit {
 
   public deleteCustomer():void{
    this.service.deleteCustomer(this.customer.id).subscribe();
+   alert(`Customer Deleted.DNI:${this.newCustomer.id}`);
    this.router.navigate(['/customers']);
   }
 
