@@ -19,7 +19,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
   customer: Customer;
   customerList: Customer[]=[];
   productList: Product[]=[];
-
+  selectedCustomerName:string;
   /*Codigo dropList*/
   myControl = new FormControl();
   options: string[] = [];
@@ -64,6 +64,24 @@ export class AddCustomerInvoiceComponent implements OnInit {
   public backToList():void{
     this.router.navigate(['/home']);
   }
+
+
+  onSelectCustomer(option:string):void{
+    this.selectedCustomerName=option;
+    console.log("OPTION: "+option);
+    for(let i=0;i<this.customerList.length;i++){
+      console.log("OPTION: "+option + " LIST: "+this.customerList[i]);
+      if(this.customerList[i].name.toLowerCase()==option.toLowerCase()){
+        
+        this.customer=this.customerList[i];
+      }
+    }
+    this.showCustomer=true;
+    this.selectCustomer=false;
+  }
+
+
+
   }
 
 
