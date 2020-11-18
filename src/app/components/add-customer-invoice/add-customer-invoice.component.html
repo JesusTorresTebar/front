@@ -1,1 +1,72 @@
 <p>add-customer-invoice works!</p>
+
+<div class="card bg-light mb-3">
+    <div class="card-header">Customer Details</div>
+    <div class="card-body">
+        <button class="btn btn-primary my-2" (click)="backToList()">Back</button>
+        <div class="card-deck">
+            <!-- Customer Details-->
+            <div class="card bg-light mb-3">
+                <div class="card-header">Customer Details</div>
+                <div class="card-body">
+                    <div *ngIf="selectCustomer">
+
+                        <!--Codigo dropList-->
+                        <form class="example-form">
+                            <mat-form-field class="example-full-width">
+                              <input type="text"
+                                     placeholder="Pick one"
+                                     aria-label="Number"
+                                     matInput
+                                     [formControl]="myControl"
+                                     [matAutocomplete]="auto">
+                              <mat-autocomplete #auto="matAutocomplete">
+                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                                  {{option}}
+                                </mat-option>
+                              </mat-autocomplete>
+                            </mat-form-field>
+                          </form>
+    
+    
+    
+                    </div>
+                    <div *ngIf="showCustomer">
+                        <p class="font-weight-bold">Client Name</p>
+                        <p class="font-weight-normal">{{customer.name}}</p>
+                        <p class="font-weight-bold">DNI</p>
+                        <p class="font-weight-normal">{{customer.id}}</p>
+                        <p class="font-weight-bold">Address</p>
+                        <p class="font-weight-normal">{{customer.address}}</p>
+                    </div>
+                    
+                </div>
+
+            </div>
+            <!-- Invoice Details-->
+            <div class="card bg-light mb-3">
+                <div class="card-header">Invoice Details</div>
+                <div class="card-body">
+                   
+
+
+                    
+                </div>
+
+            </div>
+        </div>
+        <!-- Products-->
+        <div class="card bg-light mb-3">
+            <div class="card-header">Customer Details</div>
+            <div class="card-body">
+
+
+
+                
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
