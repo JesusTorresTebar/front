@@ -34,7 +34,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
       this.customerList=customerList;
       console.log("tamaño del array" + customerList.length);
       for(let i=0;i<customerList.length;i++){
-        this.options.push(customerList[i].name);
+        this.options.push(customerList[i].name);                   
       }
     });
 
