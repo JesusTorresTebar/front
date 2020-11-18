@@ -24,7 +24,10 @@ import { IndividualCustomerComponent } from './components/individual-customer/in
 import { AddProviderInvoiceComponent } from './components/add-provider-invoice/add-provider-invoice.component';
 import { AddCustomerInvoiceComponent } from './components/add-customer-invoice/add-customer-invoice.component';
 import { CreateInvoiceSelectionComponent } from './components/create-invoice-selection/create-invoice-selection.component';
-
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import {MatInputModule} from '@angular/material/input';
+import {MatDialogModule} from '@angular/material/dialog';
 
 
 @NgModule({
@@ -40,24 +43,23 @@ import { CreateInvoiceSelectionComponent } from './components/create-invoice-sel
     AddInvoiceComponent,
     HomeComponent,
     IndividualProductComponent,
-    
     CustomerComponent,
-    
     IndividualProviderComponent,
-    
     IndividualCustomerComponent,
-    
     AddProviderInvoiceComponent,
-    
     AddCustomerInvoiceComponent,
-    
     CreateInvoiceSelectionComponent
     
     
     
   ],
   imports: [
-  
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDialogModule,
+    MatButtonModule,
+ 
+    MatInputModule,
     BrowserModule,
     AppRoutingModule,
     LayoutModule,
