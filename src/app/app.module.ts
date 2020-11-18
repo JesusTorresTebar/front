@@ -16,7 +16,7 @@ import { AddInvoiceComponent } from './components/add-invoice/add-invoice.compon
 import { HomeComponent } from './components/home/home.component';
 import { RouterModule } from '@angular/router';
 import { IndividualProductComponent } from './components/individual-product/individual-product.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CustomerComponent } from './components/customer/customer.component';
 import { AddCustomerComponent } from './components/add-customer/add-customer.component';
 import { IndividualProviderComponent } from './components/individual-provider/individual-provider.component';
@@ -25,11 +25,12 @@ import { AddProviderInvoiceComponent } from './components/add-provider-invoice/a
 import { AddCustomerInvoiceComponent } from './components/add-customer-invoice/add-customer-invoice.component';
 import { CreateInvoiceSelectionComponent } from './components/create-invoice-selection/create-invoice-selection.component';
 import { MatButtonModule } from '@angular/material/button';
+import { MatSelectModule } from '@angular/material/select';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 
-
+import {MatAutocompleteModule} from '@angular/material/autocomplete';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,11 +55,13 @@ import {MatDialogModule} from '@angular/material/dialog';
     
   ],
   imports: [
+    MatSelectModule,
     MatButtonModule,
     MatFormFieldModule,
     MatDialogModule,
     MatButtonModule,
- 
+    MatAutocompleteModule,
+    ReactiveFormsModule,
     MatInputModule,
     BrowserModule,
     AppRoutingModule,
