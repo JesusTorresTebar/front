@@ -32,12 +32,12 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
     this.serviceInvoice.findAllCustomer().subscribe(customerList =>{
       this.customerList=customerList;
-      
+      for(let i=0;i<customerList.length;i++){
+        this.options[i]=customerList[i].name;
+      }
     });
 
-    for(let i=0;i<this.customerList.length;i++){
-      this.options[i]=this.customerList[i].name;
-    }
+
     this.serviceProduct.findAllProduct().subscribe(productList =>{
       this.productList=productList;
     });
