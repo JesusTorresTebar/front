@@ -22,7 +22,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
   /*Codigo dropList*/
   myControl = new FormControl();
-  options: string[] = null;
+  options: string[] = [];
   filteredOptions: Observable<string[]>;
 
 
