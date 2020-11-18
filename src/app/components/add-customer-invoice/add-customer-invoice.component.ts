@@ -17,8 +17,8 @@ export class AddCustomerInvoiceComponent implements OnInit {
   selectCustomer: boolean=true;
   showCustomer:boolean=false;
   customer: Customer;
-  customerList: Customer[];
-  productList: Product[];
+  customerList: Customer[]=[];
+  productList: Product[]=[];
 
   /*Codigo dropList*/
   myControl = new FormControl();
