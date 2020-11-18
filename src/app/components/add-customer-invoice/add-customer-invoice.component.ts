@@ -32,6 +32,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
     this.serviceInvoice.findAllCustomer().subscribe(customerList =>{
       this.customerList=customerList;
+      console.log("tamaño del array" + customerList.length);
       for(let i=0;i<customerList.length;i++){
         this.options.push(customerList[i].name);
       }
