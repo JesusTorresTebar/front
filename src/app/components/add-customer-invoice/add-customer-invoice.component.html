@@ -71,7 +71,23 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!-- 
+                                <tr *ngIf="showProductOption">
+                                <!-- Product y Quantity Selector-->
+                                <form class="example-form">
+                                    <mat-form-field class="example-full-width">
+                                        <input type="text" placeholder="Pick one" aria-label="Number" matInput
+                                            [formControl]="myControl" [matAutocomplete]="auto">
+                                        <mat-autocomplete #auto="matAutocomplete">
+                                            <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+                                                (click)="onSelectProduct(option)">
+                                                {{option}}
+                                            </mat-option>
+                                        </mat-autocomplete>
+                                    </mat-form-field>
+                                </form>
+
+                                </tr>
+                                
                                 <tr *ngFor="let product of detailList;let i=index">
                                     <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart">
                                     </td>
@@ -97,7 +113,7 @@
                                 <tr>
                                     <td colspan="4" class="text-right"><strong>Total</strong></td>
                                     <td>$88.00</td>
-                                </tr>Añadir input para producto y quantity-->
+                                </tr><!--Añadir input para producto y quantity-->
                             </tbody>
                         </table>
                     </div>

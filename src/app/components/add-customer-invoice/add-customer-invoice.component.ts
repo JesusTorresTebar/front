@@ -21,6 +21,7 @@ import { CustomerInvoice } from 'src/app/models/customerInvoice';
 export class AddCustomerInvoiceComponent implements OnInit {
   selectCustomer: boolean = true;
   showCustomer: boolean = false;
+  showProductOption: boolean = false;
 
   customer: Customer;
   customerList: Customer[] = [];
@@ -30,7 +31,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
   newCustomerInvoice: CustomerInvoice = new CustomerInvoice();
 
   emptyDetail: InvoiceDetail = new InvoiceDetail();
+  auxDetail:InvoiceDetail = new InvoiceDetail();
 
+  product:Product;
   productList: Product[] = [];
 
   detailList: InvoiceDetail[] = [];
@@ -38,11 +41,13 @@ export class AddCustomerInvoiceComponent implements OnInit {
   /*
   productQuantityList:number[]=[];
   productTotalList:number[]=[];*/
-
+  selectedProductName: string;
   selectedCustomerName: string;
   /*Codigo dropList*/
   myControl = new FormControl();
   options: string[] = [];
+
+
   filteredOptions: Observable<string[]>;
 
 
@@ -101,6 +106,21 @@ export class AddCustomerInvoiceComponent implements OnInit {
     this.showCustomer = true;
     this.selectCustomer = false;
 
+
+
+
+    /*cambiamos la lista desplegable a los productos*/
+
+    this.options = [];
+    for (let i = 0; i < this.productList.length; i++) {
+      this.options.push(this.productList[i].productName);
+    }
+    this.showProductOption = true;
+
+
+
+
+    /*FACCTURA*/
     /*Creación de la factura.*/
     this.customerInvoice.customerId = this.customer.id;
 
@@ -117,6 +137,8 @@ export class AddCustomerInvoiceComponent implements OnInit {
     this.emptyDetail.total = 10
     this.emptyDetail.unitPrice = 10;
     this.customerInvoice.invoiceDetail = [this.emptyDetail];
+    this.customerInvoice.invoiceDetail.push(this.emptyDetail);
+    console.log("POLLO:"+this.customerInvoice.invoiceDetail[0].productId);
 
 
     /*Creamos la factura y recibimos la nueva*/
@@ -126,6 +148,27 @@ export class AddCustomerInvoiceComponent implements OnInit {
       console.log("la factura es:" + this.newCustomerInvoice.id);
 
     });
+  }
+
+  onSelectProduct(option: string): void {
+    this.selectedProductName = option;
+    console.log("OPTION: " + option);
+    for (let i = 0; i < this.productList.length; i++) {
+      console.log("OPTION: " + option + " LIST: " + this.productList[i]);
+      if (this.productList[i].productName.toLowerCase() == option.toLowerCase()) {
+
+        this.product = this.productList[i];
+      }
+    }
+
+    this.productDetailList.push(this.product);
+    this.auxDetail.productId=this.product.id;
+    this.auxDetail.quantity=1;
+    this.auxDetail.unitPrice=this.product.price;
+    this.auxDetail.total=this.auxDetail.unitPrice*this.auxDetail.quantity;
+
+    this.detailList.push(this.auxDetail);
+    
   }
 
 
