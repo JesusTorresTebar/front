@@ -14,22 +14,19 @@
                         <!--Codigo dropList-->
                         <form class="example-form">
                             <mat-form-field class="example-full-width">
-                              <input type="text"
-                                     placeholder="Pick one"
-                                     aria-label="Number"
-                                     matInput
-                                     [formControl]="myControl"
-                                     [matAutocomplete]="auto">
-                              <mat-autocomplete #auto="matAutocomplete">
-                                <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="onSelectCustomer(option)">
-                                  {{option}}
-                                </mat-option>
-                              </mat-autocomplete>
+                                <input type="text" placeholder="Pick one" aria-label="Number" matInput
+                                    [formControl]="myControl" [matAutocomplete]="auto">
+                                <mat-autocomplete #auto="matAutocomplete">
+                                    <mat-option *ngFor="let option of filteredOptions | async" [value]="option"
+                                        (click)="onSelectCustomer(option)">
+                                        {{option}}
+                                    </mat-option>
+                                </mat-autocomplete>
                             </mat-form-field>
-                          </form>
-    
-    
-    
+                        </form>
+
+
+
                     </div>
                     <div *ngIf="showCustomer">
                         <p class="font-weight-bold">Client Name</p>
@@ -39,7 +36,7 @@
                         <p class="font-weight-bold">Address</p>
                         <p class="font-weight-normal">{{customer.address}}</p>
                     </div>
-                    
+
                 </div>
 
             </div>
@@ -47,10 +44,10 @@
             <div class="card bg-light mb-3">
                 <div class="card-header">Invoice Information</div>
                 <div class="card-body">
-                   
 
 
-                    
+
+
                 </div>
 
             </div>
@@ -60,9 +57,56 @@
             <div class="card-header">Invoice Details</div>
             <div class="card-body">
 
+                <!-- Plantilla Boostrap-->
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Product</th>
+                                    <th>Description</th>
+                                    <th>Qty</th>
+                                    <th>Price</th>
+                                    <th>Total</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- 
+                                <tr *ngFor="let product of detailList;let i=index">
+                                    <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart">
+                                    </td>
+                                    <td><strong>{{productDetailList[i]?.productName}}</strong>
+                                        <p>{{productDetailList[i]?.description}}</p>
+                                    </td>
+                                    <td> {{product.quantity}}</td>
+                                    <td>{{productDetails?[i].price}}</td>
+                                    <td>{{product.total}}</td>
+                                </tr>
+
+                                <tr>
+                                    <td colspan="6">&nbsp;</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-right">Total Product</td>
+                                    <td>$86.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-right">Total Shipping</td>
+                                    <td>$2.00</td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4" class="text-right"><strong>Total</strong></td>
+                                    <td>$88.00</td>
+                                </tr>Añadir input para producto y quantity-->
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
 
 
-                
+
+
+
             </div>
 
         </div>

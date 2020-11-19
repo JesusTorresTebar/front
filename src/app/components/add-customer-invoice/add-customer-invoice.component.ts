@@ -7,6 +7,9 @@ import { Product } from 'src/app/models/product';
 import { InvoiceService } from 'src/app/services/invoice.service';
 import { ProductService } from 'src/app/services/product.service';
 import { map, startWith} from 'rxjs/operators';
+import { InvoiceDetail } from 'src/app/models/invoiceDetail';
+import { CustomerInvoice } from 'src/app/models/customerInvoice';
+import { timeStamp } from 'console';
 
 @Component({
   selector: 'app-add-customer-invoice',
@@ -16,9 +19,24 @@ import { map, startWith} from 'rxjs/operators';
 export class AddCustomerInvoiceComponent implements OnInit {
   selectCustomer: boolean=true;
   showCustomer:boolean=false;
+
   customer: Customer;
   customerList: Customer[]=[];
+
+  invoiceCreated:boolean=false;
+  customerInvoice:CustomerInvoice;
+  newCustomerInvoice:CustomerInvoice;
+
+  emptyDetail:InvoiceDetail;
+
   productList: Product[]=[];
+
+  detailList: InvoiceDetail[]=[];
+  productDetailList:Product[]=[];
+  /*
+  productQuantityList:number[]=[];
+  productTotalList:number[]=[];*/
+
   selectedCustomerName:string;
   /*Codigo dropList*/
   myControl = new FormControl();
@@ -36,6 +54,13 @@ export class AddCustomerInvoiceComponent implements OnInit {
       for(let i=0;i<customerList.length;i++){
         this.options.push(customerList[i].name);                   
       }
+
+      /*detalle vacio*/
+
+      this.emptyDetail.productId="0000";
+      this.emptyDetail.quantity=1;
+      this.emptyDetail.total=10
+      this.emptyDetail.unitPrice=10;
     });
 
 
@@ -78,7 +103,44 @@ export class AddCustomerInvoiceComponent implements OnInit {
     }
     this.showCustomer=true;
     this.selectCustomer=false;
+
+    /*Creación de la factura.*/
+    this.customerInvoice.customerId=this.customer.id;
+
+    /*Obtención fecha*/
+    let date = new Date();
+    this.customerInvoice.invoiceDate=date;
+
+    this.customerInvoice=this.updateInvoicePrice(10,this.customerInvoice);
+    this.customerInvoice.invoiceDetail.push(this.emptyDetail);
+
+    /*Creamos la factura y recibimos la nueva*/
+    this.serviceInvoice.createCustomerInvoice(this.customerInvoice).subscribe(customerInvoice=>{
+      this.newCustomerInvoice=customerInvoice;
+      this.invoiceCreated=true;
+      console.log("la factura es:"+this.newCustomerInvoice.id);
+
+    });
   }
+
+
+
+
+  updateInvoicePrice(subtotal:number,customerInvoice:CustomerInvoice):CustomerInvoice{
+    customerInvoice.subtotal=subtotal;
+    customerInvoice.vatPercentage=0.21;
+    customerInvoice.vat=customerInvoice.vatPercentage*customerInvoice.subtotal;
+    customerInvoice.total=customerInvoice.subtotal+customerInvoice.vat;
+    
+    
+    return customerInvoice;
+
+  }
+
+
+
+
+
 
 
 
