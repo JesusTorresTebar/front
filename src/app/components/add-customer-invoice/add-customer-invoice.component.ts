@@ -11,6 +11,8 @@ import { InvoiceDetail } from 'src/app/models/invoiceDetail';
 import { CustomerInvoice } from 'src/app/models/customerInvoice';
 
 
+
+
 @Component({
   selector: 'app-add-customer-invoice',
   templateUrl: './add-customer-invoice.component.html',
@@ -24,10 +26,10 @@ export class AddCustomerInvoiceComponent implements OnInit {
   customerList: Customer[]=[];
 
   invoiceCreated:boolean=false;
-  customerInvoice:CustomerInvoice;
-  newCustomerInvoice:CustomerInvoice;
+  customerInvoice:CustomerInvoice=new CustomerInvoice();
+  newCustomerInvoice:CustomerInvoice=new CustomerInvoice();
 
-  emptyDetail:InvoiceDetail;
+  emptyDetail:InvoiceDetail=new InvoiceDetail();
 
   productList: Product[]=[];
 
@@ -57,7 +59,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
       /*detalle vacio*/
 
-      this.emptyDetail.productId="0000";
+      this.emptyDetail.productId="0005";
       this.emptyDetail.quantity=1;
       this.emptyDetail.total=10
       this.emptyDetail.unitPrice=10;
