@@ -44,7 +44,12 @@
             <div class="card bg-light mb-3">
                 <div class="card-header">Invoice Information</div>
                 <div class="card-body">
-
+                    <div *ngIf="invoiceCreated">
+                        <p class="font-weight-bold">Invoice Id</p>
+                        <p class="font-weight-normal">{{newCustomerInvoice.id}}</p>
+                        <p class="font-weight-bold">Date</p>
+                        <p class="font-weight-normal">{{newCustomerInvoice.invoiceDate}}</p>
+                    </div>
 
 
 
