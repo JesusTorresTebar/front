@@ -7,7 +7,7 @@ export class CustomerInvoice {
     vat: number;
     subtotal: number;
     total: number;
-    invoiceDetail:InvoiceDetail[];
+    details:InvoiceDetail[];
 }
 
 

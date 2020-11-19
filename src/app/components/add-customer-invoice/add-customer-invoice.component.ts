@@ -138,9 +138,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
     /*detalle vacio*/
 
 
-    this.customerInvoice.invoiceDetail = [];
-    this.customerInvoice.invoiceDetail.push(this.emptyDetail);
-    console.log("POLLO:"+this.customerInvoice.invoiceDetail[0].productId);
+    this.customerInvoice.details = [];
+    this.customerInvoice.details.push(this.emptyDetail);
+    console.log("POLLO:"+this.customerInvoice.details[0].productId);
 
 
     /*Creamos la factura y recibimos la nueva*/
