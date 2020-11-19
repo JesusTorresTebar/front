@@ -114,6 +114,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
     this.customerInvoice.invoiceDate=date;
 
     this.customerInvoice=this.updateInvoicePrice(10,this.customerInvoice);
+    this.customerInvoice.invoiceDetail=[];
     this.customerInvoice.invoiceDetail.push(this.emptyDetail);
 
     /*Creamos la factura y recibimos la nueva*/
