@@ -71,8 +71,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <!--*ngIf="showProductOption"-->
-                                <tr>
+                                <div *ngIf="showProductOption">
+                                
                                 <!-- Product y Quantity Selector-->
                                 <form class="example-form">
                                     <mat-form-field class="example-full-width">
@@ -87,8 +87,8 @@
                                     </mat-form-field>
                                 </form>
 
-                                </tr>
                                 
+                                </div>
                                 <tr *ngFor="let product of detailList;let i=index">
                                     <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart">
                                     </td>
