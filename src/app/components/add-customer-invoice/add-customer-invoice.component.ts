@@ -9,7 +9,7 @@ import { ProductService } from 'src/app/services/product.service';
 import { map, startWith} from 'rxjs/operators';
 import { InvoiceDetail } from 'src/app/models/invoiceDetail';
 import { CustomerInvoice } from 'src/app/models/customerInvoice';
-import { timeStamp } from 'console';
+
 
 @Component({
   selector: 'app-add-customer-invoice',
