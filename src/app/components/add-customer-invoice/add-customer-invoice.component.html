@@ -91,11 +91,11 @@
                                 <tr *ngFor="let product of detailList;let i=index">
                                     <td><img src="https://via.placeholder.com/400x200/FFB6C1/000000" class="img-cart">
                                     </td>
-                                    <td><strong>{{productDetailList[i]?.productName}}</strong>
-                                        <p>{{productDetailList[i]?.description}}</p>
+                                    <td><strong>{{productDetailList[i].productName}}</strong>
+                                        <p>{{productDetailList[i].description}}</p>
                                     </td>
                                     <td> {{product.quantity}}</td>
-                                    <td>{{productDetails?[i].price}}</td>
+                                    <td>{{productDetails[i].price}}</td>
                                     <td>{{product.total}}</td>
                                 </tr>
 
