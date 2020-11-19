@@ -71,7 +71,8 @@
                                 </tr>
                             </thead>
                             <tbody>
-                                <tr *ngIf="showProductOption">
+                                 <!--*ngIf="showProductOption" -->
+                                <tr</tr>
                                 <!-- Product y Quantity Selector-->
                                 <form class="example-form">
                                     <mat-form-field class="example-full-width">
@@ -103,16 +104,13 @@
                                     <td colspan="6">&nbsp;</td>
                                 </tr>
                                 <tr>
-                                    <td colspan="4" class="text-right">Total Product</td>
-                                    <td>$86.00</td>
+                                    <td colspan="4" class="text-right">VAT</td>
+                                    <td>21%</td>
                                 </tr>
-                                <tr>
-                                    <td colspan="4" class="text-right">Total Shipping</td>
-                                    <td>$2.00</td>
-                                </tr>
+                                
                                 <tr>
                                     <td colspan="4" class="text-right"><strong>Total</strong></td>
-                                    <td>$88.00</td>
+                                    <td>${{total}}</td>
                                 </tr><!--Añadir input para producto y quantity-->
                             </tbody>
                         </table>

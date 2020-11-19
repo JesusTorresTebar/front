@@ -47,6 +47,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
   myControl = new FormControl();
   options: string[] = [];
 
+  total:number=0;
 
   filteredOptions: Observable<string[]>;
 
@@ -61,7 +62,11 @@ export class AddCustomerInvoiceComponent implements OnInit {
       for (let i = 0; i < customerList.length; i++) {
         this.options.push(customerList[i].name);
       }
-
+      
+      this.emptyDetail.productId = "0005";
+      this.emptyDetail.quantity = 1;
+      this.emptyDetail.total = 10
+      this.emptyDetail.unitPrice = 10;
 
     });
 
@@ -132,11 +137,8 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
     /*detalle vacio*/
 
-    this.emptyDetail.productId = "0005";
-    this.emptyDetail.quantity = 1;
-    this.emptyDetail.total = 10
-    this.emptyDetail.unitPrice = 10;
-    this.customerInvoice.invoiceDetail = [this.emptyDetail];
+
+    this.customerInvoice.invoiceDetail = [];
     this.customerInvoice.invoiceDetail.push(this.emptyDetail);
     console.log("POLLO:"+this.customerInvoice.invoiceDetail[0].productId);
 
@@ -168,6 +170,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
     this.auxDetail.total=this.auxDetail.unitPrice*this.auxDetail.quantity;
 
     this.detailList.push(this.auxDetail);
+    this.updateTotalPrice();
     
   }
 
@@ -185,6 +188,12 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
   }
 
+
+  updateTotalPrice():void{
+    for(let i=0;i<this.productDetailList.length;i++){
+      this.total=this.total+this.productDetailList[i].price;
+    }
+  }
 
 
 
