@@ -63,7 +63,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
         this.options.push(customerList[i].name);
       }
       
-      this.emptyDetail.productId = "0005";
+      this.emptyDetail.productId = "DELETE";
       this.emptyDetail.quantity = 1;
       this.emptyDetail.total = 10
       this.emptyDetail.unitPrice = 10;
@@ -151,7 +151,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
     });
 
-    this.myControl.reset();
+    this.newCustomerInvoice.details=[];
+
+  
   }
 
   onSelectProduct(option: string): void {
