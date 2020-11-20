@@ -31,6 +31,9 @@ import {MatInputModule} from '@angular/material/input';
 import {MatDialogModule} from '@angular/material/dialog';
 
 import {MatAutocompleteModule} from '@angular/material/autocomplete';
+import { IndividualCustomerInvoiceComponent } from './components/individual-customer-invoice/individual-customer-invoice.component';
+import { IndividualProviderInvoiceComponent } from './components/individual-provider-invoice/individual-provider-invoice.component';
+import {MatTabsModule} from '@angular/material/tabs';
 @NgModule({
   declarations: [
     AppComponent,
@@ -49,12 +52,15 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
     IndividualCustomerComponent,
     AddProviderInvoiceComponent,
     AddCustomerInvoiceComponent,
-    CreateInvoiceSelectionComponent
+    CreateInvoiceSelectionComponent,
+    IndividualCustomerInvoiceComponent,
+    IndividualProviderInvoiceComponent
     
     
     
   ],
   imports: [
+    MatTabsModule,
     MatSelectModule,
     MatButtonModule,
     MatFormFieldModule,
