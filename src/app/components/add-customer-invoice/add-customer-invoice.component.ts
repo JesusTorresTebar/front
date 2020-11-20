@@ -220,6 +220,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
     console.log(this.newCustomerInvoice.customerId);
     this.newCustomerInvoice.details=null;
     this.newCustomerInvoice.details=[];
+    this.newCustomerInvoice.id=null;
     for(let i=0;i<this.detailList.length;i++){
      
       this.newCustomerInvoice.details.push(this.detailList[i]);
