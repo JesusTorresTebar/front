@@ -166,8 +166,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
     for (let i = 0; i < this.productList.length; i++) {
       console.log("OPTION: " + option + " LIST: " + this.productList[i].productName);
       if (this.productList[i].productName.toLowerCase() == option.toLowerCase()) {
-        
+        console.log(" 90 BINGO product ID:"+ this.productList[i].id);
         this.product = this.productList[i];
+        console.log(" PRE BINGO product ID:"+ this.product.id);
         this.productDetailList.push(this.product);
         this.auxDetail.productId=this.product.id;
         console.log("BINGO product ID:"+ this.auxDetail.id);
