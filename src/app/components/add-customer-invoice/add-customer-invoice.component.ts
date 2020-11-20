@@ -175,7 +175,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
     this.detailList.push(this.auxDetail);
     this.updateTotalPrice();
-    this.myControl.reset();
+  
   }
 
 
@@ -194,8 +194,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
 
   updateTotalPrice():void{
+    this.total=0;
     for(let i=0;i<this.productDetailList.length;i++){
-      this.total=0;
+      
       this.total=this.total+this.productDetailList[i].price;
     }
   }
