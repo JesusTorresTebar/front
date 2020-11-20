@@ -169,15 +169,21 @@ export class AddCustomerInvoiceComponent implements OnInit {
         console.log(" 90 BINGO product ID:"+ this.productList[i].id);
         this.product = this.productList[i];
         console.log(" PRE BINGO product ID:"+ this.product.id);
-        
+        let testDetail=new InvoiceDetail();
+        testDetail.productId=this.product.id;
+        testDetail.quantity=1;
+        testDetail.unitPrice=this.product.price;
+        testDetail.total=this.product.price*1;
+        console.log("BINGO product ID:"+ testDetail.productId + ", "+testDetail.total);
+        /*
         this.auxDetail.productId=this.product.id;
-        console.log("BINGO product ID:"+ this.auxDetail.id);
+        
         this.auxDetail.quantity=1;
         this.auxDetail.unitPrice=this.product.price;
         this.auxDetail.total=this.auxDetail.unitPrice*this.auxDetail.quantity;
-        
+*/
         this.productDetailList.push(this.product);
-        this.detailList.push(this.auxDetail);
+        this.detailList.push(testDetail);
         this.updateTotalPrice();
       }
     }
