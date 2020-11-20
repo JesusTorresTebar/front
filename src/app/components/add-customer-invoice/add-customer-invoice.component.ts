@@ -149,9 +149,11 @@ export class AddCustomerInvoiceComponent implements OnInit {
       this.invoiceCreated = true;
       console.log("la factura es:" + this.newCustomerInvoice.id);
 
+      this.newCustomerInvoice.details=[];
+
     });
 
-    this.newCustomerInvoice.details=[];
+    
 
   
   }
@@ -160,9 +162,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
     this.selectedProductName = option;
     console.log("OPTION: " + option);
     for (let i = 0; i < this.productList.length; i++) {
-      console.log("OPTION: " + option + " LIST: " + this.productList[i]);
+      console.log("OPTION: " + option + " LIST: " + this.productList[i].productName);
       if (this.productList[i].productName.toLowerCase() == option.toLowerCase()) {
-
+        console.log("BINGO product ID:"+ this.productList[i].id);
         this.product = this.productList[i];
       }
     }
