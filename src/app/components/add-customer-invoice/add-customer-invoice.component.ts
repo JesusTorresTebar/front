@@ -164,19 +164,21 @@ export class AddCustomerInvoiceComponent implements OnInit {
     for (let i = 0; i < this.productList.length; i++) {
       console.log("OPTION: " + option + " LIST: " + this.productList[i].productName);
       if (this.productList[i].productName.toLowerCase() == option.toLowerCase()) {
-        console.log("BINGO product ID:"+ this.productList[i].id);
+        
         this.product = this.productList[i];
+        this.productDetailList.push(this.product);
+        this.auxDetail.productId=this.product.id;
+        console.log("BINGO product ID:"+ this.auxDetail.id);
+        this.auxDetail.quantity=1;
+        this.auxDetail.unitPrice=this.product.price;
+        this.auxDetail.total=this.auxDetail.unitPrice*this.auxDetail.quantity;
+    
+        this.detailList.push(this.auxDetail);
+        this.updateTotalPrice();
       }
     }
 
-    this.productDetailList.push(this.product);
-    this.auxDetail.productId=this.product.id;
-    this.auxDetail.quantity=1;
-    this.auxDetail.unitPrice=this.product.price;
-    this.auxDetail.total=this.auxDetail.unitPrice*this.auxDetail.quantity;
 
-    this.detailList.push(this.auxDetail);
-    this.updateTotalPrice();
   
   }
 
@@ -206,8 +208,9 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
   saveInvoice():void{
     console.log(this.newCustomerInvoice.customerId);
-   
+    this.newCustomerInvoice.details=[];
     for(let i=0;i<this.detailList.length;i++){
+     
       this.newCustomerInvoice.details.push(this.detailList[i]);
     }
     this.updateTotalPrice();
