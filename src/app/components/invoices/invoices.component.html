@@ -1,27 +1,109 @@
-<div class="container-home">
-    <div class="home-photos1 d-flex flex-row ">
-        <div class="d-flex flex-row border border-dark menu1 col-6  bg-white  ">
-           
-            <img src="https://img.icons8.com/material/240/000000/folder-invoices--v1.png" class="center-block" routerLink="/add-product" alt="Responsive image">
-            <h1 class="col-6">ADD PRODUCT</h1>
-        </div>
-        <div class="d-flex flex-row border border-dark menu2 col-6 bg-white ">
-            
-            <img  src="https://img.icons8.com/material/240/000000/contacts--v1.png" class="center-block" routerLink="/add-provider" alt="Responsive image">
-            <h1 class="col-6">ADD PROVIDER</h1>
-        </div>
+<div class="card border-dark position-relative w-100">
+    <div class="d-flex justify-content-center card-header bg-dark text-white">
+        <h1>{{titulo}}</h1>
     </div>
-    <div class="home-photos2  d-flex flex-row">
-        <div class=" d-flex flex-row border border-dark menu3 col-6  bg-white">
-           
-            <img src="https://img.icons8.com/material/240/000000/user-male--v1.png" class="center-block" routerLink="/add-user" alt="Responsive image">
-            <h1 class="col-6">ADD USER</h1>
-        </div>
-        <div class="d-flex flex-row border border-dark menu4 col-6 bg-white ">
-  
-            <img  src="https://img.icons8.com/material/240/000000/news--v1.png" class="col-6 center-block "routerLink="/add-invoice"  alt="Responsive image">
-            <h1 class="col-6">ADD INVOICE</h1>
-        </div>
-    </div>
+    <div class="card-body text-dark">
 
+
+
+        <mat-tab-group mat-align-tabs="start">
+            <mat-tab label="CUSTOMER INVOICES">
+                <div class="dropdownandSearch">
+                    <div class="row justify-content-end">
+                        <div class=" dropdown mb-3 mr-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Order By
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">ID</a>
+                                <a class="dropdown-item" href="#">Provider</a>
+                                <a class="dropdown-item" href="#">Price Low</a>
+                                <a class="dropdown-item" href="#">Price High</a>
+
+                            </div>
+                        </div>
+                        <div class="search  mb-3">
+                            <form class="form-inline">
+                                <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success " type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Invoice Id</th>
+                            <th scope="col">Customer DNI</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Total Price</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let customerInvoice of customerInvoiceList'
+                            (click)="onSelectCustomer(customerInvoice)">
+                            <td>{{customerInvoice.id}}</td>
+                            <td>{{customerInvoice.customerId}}</td>
+                            <td>{{customerInvoice.invoiceDate}}</td>
+                            <td>{{customerInvoice.total}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+
+            </mat-tab>
+            <mat-tab label="PROVIDER INVOICES">
+                <div class="dropdownandSearch">
+                    <div class="row justify-content-end">
+                        <div class=" dropdown mb-3 mr-3">
+                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Order By
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item" href="#">ID</a>
+                                <a class="dropdown-item" href="#">Provider</a>
+                                <a class="dropdown-item" href="#">Price Low</a>
+                                <a class="dropdown-item" href="#">Price High</a>
+
+                            </div>
+                        </div>
+                        <div class="search  mb-3">
+                            <form class="form-inline">
+                                <input class="form-control " type="search" placeholder="Search" aria-label="Search">
+                                <button class="btn btn-outline-success " type="submit">Search</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th scope="col">Invoice Id</th>
+                            <th scope="col">Customer DNI</th>
+                            <th scope="col">Date</th>
+                            <th scope="col">Total Price</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor='let providerInvoice of providerInvoiceList'
+                            (click)="onSelectProvider(providerInvoice)">
+                            <td>{{providerInvoice.id}}</td>
+                            <td>{{providerInvoice.providerId}}</td>
+                            <td>{{providerInvoice.invoiceDate}}</td>
+                            <td>{{providerInvoice.total}}</td>
+
+                        </tr>
+                    </tbody>
+                </table>
+            </mat-tab>
+
+        </mat-tab-group>
+
+
+
+    </div>
 </div>
