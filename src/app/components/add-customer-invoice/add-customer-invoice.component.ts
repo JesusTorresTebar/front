@@ -150,6 +150,8 @@ export class AddCustomerInvoiceComponent implements OnInit {
       console.log("la factura es:" + this.newCustomerInvoice.id);
 
       this.newCustomerInvoice.details=[];
+      this.newCustomerInvoice.id=this.newCustomerInvoice.id+1;
+      
 
     });
 
@@ -208,6 +210,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
   saveInvoice():void{
     console.log(this.newCustomerInvoice.customerId);
+    this.newCustomerInvoice.details=null;
     this.newCustomerInvoice.details=[];
     for(let i=0;i<this.detailList.length;i++){
      
