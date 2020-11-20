@@ -150,6 +150,8 @@ export class AddCustomerInvoiceComponent implements OnInit {
       console.log("la factura es:" + this.newCustomerInvoice.id);
 
     });
+
+    this.myControl.reset();
   }
 
   onSelectProduct(option: string): void {
@@ -171,7 +173,7 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
     this.detailList.push(this.auxDetail);
     this.updateTotalPrice();
-    
+    this.myControl.reset();
   }
 
 
@@ -191,8 +193,29 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
   updateTotalPrice():void{
     for(let i=0;i<this.productDetailList.length;i++){
+      this.total=0;
       this.total=this.total+this.productDetailList[i].price;
     }
+  }
+
+
+  saveInvoice():void{
+    console.log(this.newCustomerInvoice.customerId);
+   
+    for(let i=0;i<this.detailList.length;i++){
+      this.newCustomerInvoice.details.push(this.detailList[i]);
+    }
+    this.updateTotalPrice();
+    this.newCustomerInvoice.subtotal=this.total;
+    this.updateInvoicePrice(this.newCustomerInvoice.subtotal,this.newCustomerInvoice);
+
+    this.serviceInvoice.createCustomerInvoice(this.newCustomerInvoice).subscribe(customerInvoice => {
+      this.newCustomerInvoice = customerInvoice;
+     
+      alert("INVOICE:"+this.newCustomerInvoice.id+" CREATED");
+    });
+
+    this.router.navigate(['/home']);
   }
 
 
