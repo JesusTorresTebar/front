@@ -50,23 +50,28 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
         console.log("If" + this.newCustomerInvoice.id);
         console.log("Fecha" + this.newCustomerInvoice.invoiceDate);
 
-
-
-
-        console.log("TRAMO 3,5");
-        console.log("Detalle" + 0 + "Id del producto" + this.newCustomerInvoice.details[0].productId);
-        for (let i = 0; i < this.newCustomerInvoice.details.length; i++) {
-          this.idProductList.push(this.newCustomerInvoice.details[i].productId);
-          console.log("Detalle" + i + "Id del producto" + this.idProductList[i]);
-        }
-
-
-        console.log("TRAMO 4");
-        this.serviceProduct.findAllProductInIds(this.idProductList).subscribe(productDetailList => {
-          this.productDetailList = productDetailList;
-
+        this.serviceInvoice.findCustomerById(this.newCustomerInvoice.customerId).subscribe(customer=>{
+          this.customer=customer;
+          
+          console.log("TRAMO 3,5");
+          console.log("Detalle" + 0 + "Id del producto" + this.newCustomerInvoice.details[0].productId);
+          for (let i = 0; i < this.newCustomerInvoice.details.length; i++) {
+            this.idProductList.push(this.newCustomerInvoice.details[i].productId);
+            console.log("Detalle" + i + "Id del producto" + this.idProductList[i]);
+          }
+  
+  
+          console.log("TRAMO 4");
+          this.serviceProduct.findAllProductInIds(this.idProductList).subscribe(productDetailList => {
+            this.productDetailList = productDetailList;
+  
+  
+          });
 
         });
+
+
+        
 
         this.detailList = this.newCustomerInvoice.details;
         console.log("TRAMO 5");
