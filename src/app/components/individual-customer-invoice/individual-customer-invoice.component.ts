@@ -37,12 +37,14 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
 
   
   ngOnInit(): void {
+    console.log("TRAMO 1");
     this.sub=this.route.params.subscribe(params =>{
       this.id=params['id'];
-
+      console.log("TRAMO 2 ID DE LA FACTURA:"+this.id);
       this.serviceInvoice.findCustomerInvoiceById(+this.id).subscribe(customerInvoice =>{
         this.customerInvoice=customerInvoice;
         this.newCustomerInvoice=customerInvoice;
+        console.log("TRAMO 3");
       });
     });
 
@@ -51,7 +53,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
       console.log("Detalle"+i+"Id del producto"+this.idProductList[i]);
     }
 
-  
+    console.log("TRAMO 4");
     this.serviceProduct.findAllProductInIds(this.idProductList).subscribe(productDetailList=>{
       this.productDetailList=productDetailList;
       
@@ -59,6 +61,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
     });
 
     this.detailList=this.newCustomerInvoice.details;
+    console.log("TRAMO 5");
   }
 
 
