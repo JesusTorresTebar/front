@@ -67,6 +67,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
   
             this.detailList = this.newCustomerInvoice.details;
             console.log("TRAMO 5");
+            this.updateTotalPrice();
             this.ready=true;
           });
 
