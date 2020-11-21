@@ -25,11 +25,11 @@ export class StorageService {
   }
 
   
-  public createProduct(building:Building): Observable<Building>{
+  public createBuilding(building:Building): Observable<Building>{
     return this.http.post<Building>(this.baseEndpoint + '/' ,building,{headers:this.headers });
   }
 
-  public updateProduct(zone:Zone): Observable<Zone>{
+  public createZone(zone:Zone): Observable<Zone>{
     return this.http.post<Zone>(this.baseEndpoint +'/update' ,zone,{headers:this.headers });
   }
 

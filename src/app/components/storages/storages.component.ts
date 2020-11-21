@@ -12,6 +12,10 @@ export class StoragesComponent implements OnInit {
   selectedBuilding: Building;
   titulo: string = 'Building List';
   buildings: Building[];
+  showForm:boolean=false;
+
+  addBuilding:Building=new Building();
+
   constructor(private service:StorageService, private router:Router) { }
 
   ngOnInit(): void {
@@ -27,4 +31,21 @@ export class StoragesComponent implements OnInit {
     this.router.navigate(['/zones',this.selectedBuilding.id]);
     
   }
+
+  addNewBuilding():void{
+    this.showForm=true;
+  }
+
+  saveBuilding():void{
+    this.service.createBuilding(this.addBuilding).subscribe(building =>{
+      console.log("Se ha guardado el edificio con id:"+this.addBuilding.id);
+      alert("Se ha creado el edificio con id:"+this.addBuilding.id);
+      this.router.navigate(['/buildings']);
+    });
+
+  }
+
+
+
+
 }
