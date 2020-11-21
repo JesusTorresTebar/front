@@ -208,11 +208,12 @@ export class AddCustomerInvoiceComponent implements OnInit {
 
 
   updateTotalPrice():void{
-    this.total=0;
-    for(let i=0;i<this.productDetailList.length;i++){
-      
-      this.total=this.total+this.productDetailList[i].price;
+    this.total = 0;
+    for (let i = 0; i < this.productDetailList.length; i++) {
+
+      this.total = this.total + this.productDetailList[i].price;
     }
+    this.total=this.total+this.total*0.21;
   }
 
 

@@ -93,6 +93,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
 
       this.total = this.total + this.productDetailList[i].price;
     }
+    this.total=this.total+this.total*0.21;
   }
   public backToList(): void {
     this.router.navigate(['/home']);
