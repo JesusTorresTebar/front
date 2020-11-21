@@ -65,7 +65,9 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
           this.serviceProduct.findAllProductInIds(this.idProductList).subscribe(productDetailList => {
             this.productDetailList = productDetailList;
   
-  
+            this.detailList = this.newCustomerInvoice.details;
+            console.log("TRAMO 5");
+            this.ready=true;
           });
 
         });
@@ -73,13 +75,12 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
 
         
 
-        this.detailList = this.newCustomerInvoice.details;
-        console.log("TRAMO 5");
+        
       });
     });
 
 
-    this.ready=true;
+ 
 
 
   }
