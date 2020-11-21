@@ -40,7 +40,7 @@ export class StoragesComponent implements OnInit {
     this.service.createBuilding(this.addBuilding).subscribe(building =>{
       console.log("Se ha guardado el edificio con id:"+this.addBuilding.id);
       alert("Se ha creado el edificio con id:"+this.addBuilding.id);
-      this.router.navigate(['/buildings']);
+      this.router.navigate(['/storages']);
     });
 
   }
