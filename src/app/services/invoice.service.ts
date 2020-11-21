@@ -55,6 +55,15 @@ export class InvoiceService {
     return this.http.get<Provider>(this.baseEndpoint + '/provider/'+ id);
   }
 
+  public findCustomerInvoiceById(id:number):Observable<CustomerInvoice>{
+    return this.http.get<CustomerInvoice>(this.baseEndpoint + '/single-customer-invoice/'+ id);
+  }
+  public findProviderInvoiceById(id:number):Observable<ProviderInvoice>{
+    return this.http.get<ProviderInvoice>(this.baseEndpoint + '/single-provider-invoice/'+ id);
+  }
+
+
+
   public findTenBestBuyerCustomer(): Observable<Customer[]> {
     return this.http.get<Customer[]>(this.baseEndpoint + '/top-buyer');
   }
