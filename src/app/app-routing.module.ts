@@ -21,6 +21,8 @@ import { AddCustomerInvoiceComponent } from './components/add-customer-invoice/a
 import { AddProviderInvoiceComponent } from './components/add-provider-invoice/add-provider-invoice.component';
 import { IndividualCustomerInvoiceComponent } from './components/individual-customer-invoice/individual-customer-invoice.component';
 import { IndividualProviderInvoiceComponent } from './components/individual-provider-invoice/individual-provider-invoice.component';
+import { StoragesComponent } from './components/storages/storages.component';
+import { ZonesComponent } from './components/zones/zones.component';
 
 const routes: Routes = [
   {path:'products',component:ProductsComponent},
@@ -39,8 +41,10 @@ const routes: Routes = [
   {path:'create-invoice-selection',component:CreateInvoiceSelectionComponent},
   {path:'customer-invoice', component:AddCustomerInvoiceComponent},
   {path:'provider-invoice', component:AddProviderInvoiceComponent},
-  {path: 'individual-customer-invoice/:id', component:IndividualCustomerInvoiceComponent},
-  {path: 'individual-provider-invoice/:id', component:IndividualProviderInvoiceComponent}
+  {path:'individual-customer-invoice/:id', component:IndividualCustomerInvoiceComponent},
+  {path:'individual-provider-invoice/:id', component:IndividualProviderInvoiceComponent},
+  {path:'storages',component:StoragesComponent},
+  {path:'zones/:id',component:ZonesComponent}
 ];
 
 @NgModule({

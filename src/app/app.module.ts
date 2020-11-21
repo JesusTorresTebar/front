@@ -34,6 +34,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import { IndividualCustomerInvoiceComponent } from './components/individual-customer-invoice/individual-customer-invoice.component';
 import { IndividualProviderInvoiceComponent } from './components/individual-provider-invoice/individual-provider-invoice.component';
 import {MatTabsModule} from '@angular/material/tabs';
+import { StoragesComponent } from './components/storages/storages.component';
+import { ZonesComponent } from './components/zones/zones.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -54,7 +56,9 @@ import {MatTabsModule} from '@angular/material/tabs';
     AddCustomerInvoiceComponent,
     CreateInvoiceSelectionComponent,
     IndividualCustomerInvoiceComponent,
-    IndividualProviderInvoiceComponent
+    IndividualProviderInvoiceComponent,
+    StoragesComponent,
+    ZonesComponent
     
     
     

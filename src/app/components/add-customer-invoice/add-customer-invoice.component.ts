@@ -227,8 +227,8 @@ export class AddCustomerInvoiceComponent implements OnInit {
       this.newCustomerInvoice.details.push(this.detailList[i]);
 
 
-      /*actualizamos el inventario de productos*/
-      this.productDetailList[i].stock=this.productDetailList[i].stock+this.detailList[i].quantity;
+      /*actualizamos el inventario de productos Aqui restamos*/
+      this.productDetailList[i].stock=this.productDetailList[i].stock-this.detailList[i].quantity;
       this.serviceProduct.updateProduct(this.productDetailList[i]).subscribe(updatedProduct=>{
         console.log("Stock nuevo:"+updatedProduct.stock);
       });
