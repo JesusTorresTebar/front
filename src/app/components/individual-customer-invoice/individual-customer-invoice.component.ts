@@ -52,7 +52,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
 
         this.serviceInvoice.findCustomerById(this.newCustomerInvoice.customerId).subscribe(customer=>{
           this.customer=customer;
-          
+          console.log("Este es el customer:"+this.customer.name);
           console.log("TRAMO 3,5");
           console.log("Detalle" + 0 + "Id del producto" + this.newCustomerInvoice.details[0].productId);
           for (let i = 0; i < this.newCustomerInvoice.details.length; i++) {
