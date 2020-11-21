@@ -18,7 +18,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
   newCustomerInvoice: CustomerInvoice;
   sub: any;
   id: string;
-
+  ready:boolean=false;
 
   total: number = 0;
 
@@ -74,7 +74,7 @@ export class IndividualCustomerInvoiceComponent implements OnInit {
     });
 
 
-
+    this.ready=true;
 
 
   }
