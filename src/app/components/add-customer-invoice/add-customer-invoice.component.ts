@@ -223,8 +223,15 @@ export class AddCustomerInvoiceComponent implements OnInit {
     this.newCustomerInvoice.details=[];
     this.newCustomerInvoice.id=null;
     for(let i=0;i<this.detailList.length;i++){
-     
+     /*agragamos los detalles a la factura*/
       this.newCustomerInvoice.details.push(this.detailList[i]);
+
+
+      /*actualizamos el inventario de productos*/
+      this.productDetailList[i].stock=this.productDetailList[i].stock+this.detailList[i].quantity;
+      this.serviceProduct.updateProduct(this.productDetailList[i]).subscribe(updatedProduct=>{
+        console.log("Stock nuevo:"+updatedProduct.stock);
+      });
     }
     this.updateTotalPrice();
     this.newCustomerInvoice.subtotal=this.total;
