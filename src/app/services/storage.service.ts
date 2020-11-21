@@ -21,7 +21,7 @@ export class StorageService {
   }
 
   public findZonesByBuildingId(id:string):Observable<Zone[]>{
-    return this.http.get<Zone[]>(this.baseEndpoint + '/zones/'+ id);
+    return this.http.get<Zone[]>(this.baseEndpoint + '/zone/'+ id);
   }
 
   
